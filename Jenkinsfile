@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {  
-                bat 'docker build -t kaveesha746/testNode:%BUILD_NUMBER% .'
+                bat 'docker build -t kaveesha746/testnode:%BUILD_NUMBER% .'
             }
         }
         stage('Login to Docker Hub') {
@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Push Image') {
             steps {
-                bat 'docker push kaveesha746/testNode:%BUILD_NUMBER%'
+                bat 'docker push kaveesha746/testnode:%BUILD_NUMBER%'
             }
         }
     }
