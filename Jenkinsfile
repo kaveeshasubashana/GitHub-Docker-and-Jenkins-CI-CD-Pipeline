@@ -16,9 +16,9 @@ pipeline {
         }
         stage('Login to Docker Hub') {
             steps {
-                withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerpwd')]) {
+                withCredentials([string(credentialsId: 'DOCKERPWD', variable: 'DOCKERPWD')]) {
                     script {
-                        bat "docker login -u kaveesha746 -p %dockerpwd%"
+                        bat "docker login -u kaveesha746 -p %DOCKERPWD%"
                     }
                 }
             }
